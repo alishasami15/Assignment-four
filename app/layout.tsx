@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import localFont from "next/font/local"
+import "./globals.css"
 import {Heebo,Inter}from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 
 const heebo =Heebo({subsets:["latin"], weight:["400","700","900"]});
-const inter =Heebo({subsets:["latin"], weight:["400","700"]});
+const inter =Inter({subsets:["latin"], weight:["400","700"]});
 
 
 export const metadata: Metadata = {
@@ -22,9 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={heebo.className}>
+      <body>
         
-      <Navbar font = {inter} />
+      <Navbar font={inter} className={heebo.className} />
         {children}
         <Footer />
       </body>
